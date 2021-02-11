@@ -2,7 +2,7 @@ import React from "react";
 import { FormGroup, Label } from "reactstrap";
 
 const QuestionLabel = ({ question }) => {
-  return <legend>{question.Label}</legend>;
+  return <Label>{question.Label}</Label>;
 };
 
 export default QuestionLabel;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Form, FormGroup } from "reactstrap";
 import Question from "./Question";
-// import "./styles.css";
+import "../styles.css";
 
 const QuestionContainer = ({ questions = [], SectionID }) => {
   const [questionFormat, setQuestionFormat] = useState([]);
@@ -9,7 +9,10 @@ const QuestionContainer = ({ questions = [], SectionID }) => {
   // console.log("questions", questions);
   console.log("questions", questions);
   return (
-    <FormGroup required>
+    <FormGroup
+      required
+      className={"border border-dark p-2 formGroup-container"}
+    >
       {questions.map((item, index) => {
         return <Question question={item} key={index} updateFormInfo={null} />;
       })}

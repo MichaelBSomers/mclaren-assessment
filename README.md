@@ -11,6 +11,8 @@ Created with CodeSandbox
 \*I'm adding an 'Answer' field to the base data, then returning the same data retrieved
 with that field included.
 
+\*generally as a rule I try to avoid using inline CSS but for readability and simplicity sake for this simply project I decided to use it for minor touches alongside BootStrap.
+
 **_ChangeLog_**
 
 \*\*form.json

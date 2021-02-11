@@ -1,41 +1,27 @@
 import React, { useState, useContext } from "react";
-import { FormGroup, Input, Label } from "reactstrap";
+import { FormGroup, Input, Label, Row, Col, Button } from "reactstrap";
 import { infoContext, infoContextActions } from "../context/infoContext";
 
-const ProgressButtons = ({ question, disable }) => {
+const ProgressButtons = ({ previous, showSubmit }) => {
   const infoState = useContext(infoContext);
-
-  if (!question.IsActive) {
-    return null;
-  }
-
-  const change = () => {
-    console.log("Question", question);
-    const newQuestion = {
-      ...question,
-      Answer: !question.Answer
-    };
-    infoState.dispatch({
-      type: infoContextActions.FORM_CHANGE,
-      value: newQuestion
-    });
-  };
+  const { currentPage } = infoState.state;
+  const { currentSection } = infoState.state;
 
   return (
-    <FormGroup check>
-      <Label check>
-        <Input
-          disabled={disable}
-          type="checkbox"
-          required={question.IsRequired}
-          name={question.QuestionId}
-          checked={question.Answer || false}
-          defaultChecked={question.Checked}
-          onClick={() => change()}
-        />
-        {question.Label}
-      </Label>
-    </FormGroup>
+    <Row className={"d-flex"}>
+      <Col sm={4}>
+        {(currentPage > 0 || currentSection > 0) && (
+          <Button block onClick={previous} className="buttons">
+            {showSubmit ? "Edit" : "< Previous"}
+          </Button>
+        )}
+      </Col>
+      <Col sm={{ size: 4, offset: 4 }}>
+        <Button block type="submit" className="buttons">
+          {showSubmit ? "Submit" : "Next >"}
+        </Button>
+      </Col>
+    </Row>
   );
 };
 

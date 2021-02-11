@@ -2,3 +2,19 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+.main-container {
+  background-color: #dbe3ff;
+  max-width: 510px;
+  margin: auto;
+  border: 1px solid black;
+}
+
+.formGroup-container {
+  background-color: #ffeebd;
+}
+
+.buttons {
+  background-color: #c5c6e3;
+  color: black;
+}
