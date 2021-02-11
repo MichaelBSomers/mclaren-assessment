@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { FormGroup, Input, Label } from "reactstrap";
 import { infoContext, infoContextActions } from "../context/infoContext";
 
-const TextBox = ({ question }) => {
+const TextBox = ({ question, disable }) => {
   const infoState = useContext(infoContext);
   if (!question.IsActive) {
     return null;
@@ -23,6 +23,7 @@ const TextBox = ({ question }) => {
     <FormGroup>
       <Label for={question.QuestionId}>{question.Label}</Label>
       <Input
+        disabled={disable}
         type={question.Type}
         required={question.IsRequired}
         name={question.QuestionId}

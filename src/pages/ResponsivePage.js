@@ -38,7 +38,6 @@ const ResponsivePage = ({ showConfirmation }) => {
     const nextPage = currentPage + 1;
     const nextSection = currentSection + 1;
     e.preventDefault();
-    console.log("updateProgress()", updateProgress());
     // This shouldn't be needed if I handle buttons correctly, but it's for redundancy.
     if (currentPage < infoState.state.data.length - 1) {
       if (
@@ -59,11 +58,15 @@ const ResponsivePage = ({ showConfirmation }) => {
       }
     } else {
       if (checkLastSection()) {
-        console.log("showConfirmation");
+        updateSection({
+          section: nextSection,
+          page: currentPage,
+          progress: updateProgress(currentPage, nextSection)
+        });
         showConfirmation(true);
       } else {
         // Show Error Page
-        console.log("uhhhh??");
+        console.log("opps");
       }
     }
   };
@@ -135,6 +138,7 @@ const ResponsivePage = ({ showConfirmation }) => {
           infoState.state.data[currentPage].Sections[currentSection].SectionID
         }
       />
+      {/* TODO: Make Buttons their own component */}
       <Row>
         <Col xs={4}>
           {(currentPage > 0 || currentSection > 0) && (

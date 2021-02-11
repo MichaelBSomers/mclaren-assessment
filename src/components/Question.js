@@ -12,7 +12,7 @@ const UI_IDS = {
   inlineRadioButton: "rbil"
 };
 
-const Question = ({ question, updateFormInfo }) => {
+const Question = ({ question, updateFormInfo, disable = false }) => {
   // console.log("question", question);
   const [QuestionID, setQuestionID] = useState();
   const [SectionID, setSectionID] = useState();
@@ -30,13 +30,31 @@ const Question = ({ question, updateFormInfo }) => {
     return <QuestionLabel question={question} />;
   }
   if (question.UI === UI_IDS.checkBox) {
-    return <CheckBox question={question} updateFormInfo={updateFormInfo} />;
+    return (
+      <CheckBox
+        question={question}
+        updateFormInfo={updateFormInfo}
+        disable={disable}
+      />
+    );
   }
   if (question.UI === UI_IDS.textBox) {
-    return <TextBox question={question} updateFormInfo={updateFormInfo} />;
+    return (
+      <TextBox
+        question={question}
+        updateFormInfo={updateFormInfo}
+        disable={disable}
+      />
+    );
   }
   if (question.UI === UI_IDS.inlineRadioButton) {
-    return <RadioButton question={question} updateFormInfo={updateFormInfo} />;
+    return (
+      <RadioButton
+        question={question}
+        updateFormInfo={updateFormInfo}
+        disable={disable}
+      />
+    );
   }
   return null;
 };

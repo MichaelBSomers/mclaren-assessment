@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { FormGroup, Input, Label } from "reactstrap";
 import { infoContext, infoContextActions } from "../context/infoContext";
 
-const RadioButton = ({ question }) => {
+const RadioButton = ({ question, disable }) => {
   const infoState = useContext(infoContext);
   if (!question.IsActive) {
     return null;
@@ -34,7 +34,7 @@ const RadioButton = ({ question }) => {
                 required={question.IsRequired}
                 type="radio"
                 name={question.QuestionID}
-                disabled={!item.IsActive}
+                disabled={disable || !item.IsActive}
                 onChange={() => change(item, index)}
                 defaultChecked={item.Answer}
               />

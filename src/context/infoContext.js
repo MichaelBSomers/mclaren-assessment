@@ -55,17 +55,9 @@ const InfoContextStateProvider = ({ children }) => {
             questionIndex = index;
           }
         });
-        // const questionIndex = state.data[state.currentPage].Sections[
-        //   state.currentSection
-        // ].Questions.indexOf((item, index) => {
-        //   item.QuestionID === action.value.QuestionID;
-        // });
-        console.log("questionIndex", questionIndex);
-
         newState.data[state.currentPage].Sections[
           state.currentSection
         ].Questions[questionIndex] = action.value;
-        // console.log("newState", newState);
         return newState;
       default:
         throw new Error();

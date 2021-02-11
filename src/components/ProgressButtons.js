@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { FormGroup, Input, Label } from "reactstrap";
 import { infoContext, infoContextActions } from "../context/infoContext";
 
-const CheckBox = ({ question, disable }) => {
+const ProgressButtons = ({ question, disable }) => {
   const infoState = useContext(infoContext);
 
   if (!question.IsActive) {
@@ -39,4 +39,4 @@ const CheckBox = ({ question, disable }) => {
   );
 };
 
-export default CheckBox;
+export default ProgressButtons;
