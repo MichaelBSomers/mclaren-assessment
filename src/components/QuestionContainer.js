@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Row, Col, Form, FormGroup } from "reactstrap";
+import React from "react";
+import { FormGroup } from "reactstrap";
 import Question from "./Question";
 import "../styles.css";
 
-const QuestionContainer = ({ questions = [], SectionID }) => {
-  const [questionFormat, setQuestionFormat] = useState([]);
-
-  // console.log("questions", questions);
+const QuestionContainer = ({ questions = [] }) => {
   console.log("questions", questions);
   return (
     <FormGroup
