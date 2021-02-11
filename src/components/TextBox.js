@@ -12,6 +12,7 @@ const TextBox = ({ question }) => {
         type={question.Type}
         required={question.IsRequired}
         name={question.QuestionId}
+        placeholder={question.Placeholder}
       />
     </FormGroup>
   );

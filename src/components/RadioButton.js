@@ -8,7 +8,7 @@ const RadioButton = ({ question }) => {
   console.log("question", question);
   return (
     <FormGroup tag="fieldset">
-      <legend>{question.Label}</legend>
+      <Label>{question.Label}</Label>
       {question.Options.map((item, index) => {
         return (
           <FormGroup check disabled={!item.IsActive} key={index}>

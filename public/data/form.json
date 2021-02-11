@@ -101,6 +101,7 @@
             "QuestionID": 342,
             "SectionID": 141,
             "Name": null,
+            "Placeholder": "Email@Mclaren.com",
             "Label": "Email",
             "Type": "email",
             "UI": "tb",
@@ -196,7 +197,8 @@
             "CreatedBy": 0,
             "PHQIDIfSelected": 0,
             "IsActive": true,
-            "Options": null
+            "Options": null,
+            "Checked": true
           }
         ]
       }

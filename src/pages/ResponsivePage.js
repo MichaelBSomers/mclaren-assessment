@@ -61,6 +61,8 @@ const ResponsivePage = () => {
       if (checkCompletion()) {
         // pass completion.
         // Submit Form
+      } else {
+        // Show Error Page
       }
     }
     // TODO Implement Submission and completion page transition.
@@ -70,6 +72,7 @@ const ResponsivePage = () => {
   //consolidate updates into a single function
 
   const checkCompletion = () => {
+    console.log("checking completion");
     return false;
   };
 
@@ -134,7 +137,9 @@ const ResponsivePage = () => {
         questions={
           infoState.state.data[currentPage].Sections[currentSection].Questions
         }
-        updateFormInfo={setFormInfo}
+        SectionID={
+          infoState.state.data[currentPage].Sections[currentSection].SectionID
+        }
       />
       <Row>
         <Col xs={4}>

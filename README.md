@@ -13,3 +13,5 @@ Created with CodeSandbox
 \*\*form.json
 \*Added Type field to TextBoxs to ensure customization of fields using html types.
 \*Included extra Label to Page 2.
+\*Added Placeholder to Textbox fields
+\*Added checked default to true to Raffle.

@@ -8,16 +8,24 @@ const initialState = {
     }
   ]
 };
-
+// Example
 // [
 //   {
-//     QuestionID: 123,
-//     Answer:
+//     SectionID: 123,
+//     Questions:
 //     [
-//       String
+//       {
+//         QuestionID: 123,
+//         Answer: String || Boolean || QuestionOptionID
+//       }
 //     ]
-//   },
+//   }
 // ]
+
+// Checbox = Boolean
+// TextBox = String
+// Radio   = QuestionOptionID
+
 const formContext = createContext(initialState);
 const { Provider } = formContext;
 
