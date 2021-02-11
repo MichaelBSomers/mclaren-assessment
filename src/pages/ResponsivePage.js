@@ -3,7 +3,7 @@ import { Button, Form, Row, Col } from "reactstrap";
 import QuestionContainer from "../components/QuestionContainer";
 import { infoContext, infoContextActions } from "../context/infoContext";
 
-const ResponsivePage = () => {
+const ResponsivePage = ({ showConfirmation }) => {
   const infoState = useContext(infoContext);
   const [formInfo, setFormInfo] = useState([]);
 
@@ -58,23 +58,17 @@ const ResponsivePage = () => {
         });
       }
     } else {
-      if (checkCompletion()) {
-        // pass completion.
-        // Submit Form
+      if (checkLastSection()) {
+        console.log("showConfirmation");
+        showConfirmation(true);
       } else {
         // Show Error Page
+        console.log("uhhhh??");
       }
     }
-    // TODO Implement Submission and completion page transition.
-    // TODO Finish function to check if all pages / sections have been complete
   };
 
   //consolidate updates into a single function
-
-  const checkCompletion = () => {
-    console.log("checking completion");
-    return false;
-  };
 
   const checkLastSection = () => {
     if (
@@ -153,7 +147,7 @@ const ResponsivePage = () => {
         <Col xs={4} />
         <Col xs={4}>
           <Button block type="submit">
-            {checkLastSection() ? "Submit" : "Next >"}
+            Next &gt;
           </Button>
         </Col>
       </Row>

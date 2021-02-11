@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import ProgressBar from "./components/ProgressBar";
 import ResponsivePage from "./pages/ResponsivePage";
-import CompletePage from "./pages/CompletePage";
+import ConfirmationPage from "./pages/ConfirmationPage";
 import { infoContext, infoContextActions } from "./context/infoContext";
 import { Row, Col, Container } from "reactstrap";
 
@@ -10,6 +10,7 @@ import "./styles.css";
 const Home = () => {
   const infoState = useContext(infoContext);
   const [loading, setLoading] = useState(true);
+  const [showConfirmation, setShowConfirmation] = useState(false);
   const complete = false;
 
   const updateData = (data) => {
@@ -47,16 +48,17 @@ const Home = () => {
     updateProgress(0);
   }, []);
 
-  console.log(infoState.state);
+  console.log("showConfirmation", showConfirmation);
 
   if (loading) {
     return <div>Loading</div>;
   }
 
-  if (complete) {
+  if (showConfirmation) {
     return (
       <Container>
-        <CompletePage />
+        <ProgressBar />
+        <ConfirmationPage />
       </Container>
     );
   }
@@ -68,7 +70,7 @@ const Home = () => {
   return (
     <Container>
       <ProgressBar />
-      <ResponsivePage />
+      <ResponsivePage showConfirmation={setShowConfirmation} />
     </Container>
   );
 };
