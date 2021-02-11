@@ -10,7 +10,7 @@ the sections into different pages.
 
 \*Nothing is set to required. I'm taking the liberty to make them required otherwise the user can submit a blank form.
 
-\*I don't understand what is suppoed to go in the bottom 'Sections' from the layout on the google doc, excluding it.
+\*I don't understand what is supposed to go in the bottom 'Sections' from the layout on the google doc, excluding it.
 \*\*Edit, I recently understood what it meant and decided to keep the project the way it is as it shows the ability to still split the questions per section utilizing different pages. Page now simply changes base data such as the header while section, sections off each page and question array provides all the questions needed and options provides the different options for each question. Overall this should provide more flexibility in what you can do with data -> display.
 
 \*I'm adding an 'Answer' field to the base data, then returning the same data retrieved
@@ -20,6 +20,8 @@ with that field included.
 --Removed Inline CSS
 
 \*Although formContext isn't being used, I'll be leaving the file as a show of my thinking on a different way to handle submitting the information. I think the other approach I took is easier / better, but also minipulates the base raw data, which I generally don't want to do.
+
+\*After completing this assessment I can easily say creating my own form using context would have made this signifigantly easier, but by the time I got to that I was already invested.
 
 **_ChangeLog_**
 
