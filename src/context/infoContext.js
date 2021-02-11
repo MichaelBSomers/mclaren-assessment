@@ -4,8 +4,7 @@ const initialState = {
   data: [], // raw json data
   progress: 0, //percent
   currentPage: 0,
-  currentSection: 0,
-  totalPages: 0
+  currentSection: 0
 };
 const infoContext = createContext(initialState);
 const { Provider } = infoContext;

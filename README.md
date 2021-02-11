@@ -19,6 +19,8 @@ with that field included.
 \*generally as a rule I try to avoid using inline CSS but for readability and simplicity sake for this simply project I decided to use it for minor touches alongside BootStrap.
 --Removed Inline CSS
 
+\*Although formContext isn't being used, I'll be leaving the file as a show of my thinking on a different way to handle submitting the information. I think the other approach I took is easier / better, but also minipulates the base raw data, which I generally don't want to do.
+
 **_ChangeLog_**
 
 \*\*form.json

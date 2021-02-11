@@ -22,8 +22,14 @@ const Home = () => {
   };
 
   const submitForm = () => {
-    // Send JSON back to server :D
-    // Thank You for looking at my assessment
+    // Send JSON back to server (I usually use axios)
+    // const response = axios.post('/submit', infoState.state.data)
+    // if(response.error){
+    //   error
+    // } else {
+    //   Completion page
+    // }
+    // Thank You for looking at my assessment :D
   };
 
   const onSubmit = (e) => {
@@ -58,7 +64,6 @@ const Home = () => {
         setShowConfirmation(true);
       } else {
         // Show Error Page
-        console.log("opps");
       }
     }
   };
@@ -122,14 +127,14 @@ const Home = () => {
     let sectionCount = 0;
     let currentPosition = 0;
 
-    infoState.state.data.map((page, index) => {
-      page.Sections.map((section, index) => {
+    infoState.state.data.map((page) => {
+      page.Sections.map((section) => {
         sectionCount++;
       });
     });
     infoState.state.data.map((page, index) => {
       if (index < nextPage) {
-        page.Sections.map((section, index) => {
+        page.Sections.map((section) => {
           currentPosition++;
         });
       } else if (index === nextPage) {
@@ -185,9 +190,7 @@ const Home = () => {
     );
   }
 
-  // Probably going to skip implementation of ReactRouter for simplicity sake
-  // as the completion page is my own addition as it doesn't make sense with
-  // the progress bar and now having one.
+  // Going to skip implementation of ReactRouter for simplicity sake.
 
   return (
     <Container fluid className="m-auto">

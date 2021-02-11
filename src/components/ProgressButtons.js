@@ -1,6 +1,6 @@
-import React, { useState, useContext } from "react";
-import { FormGroup, Input, Label, Row, Col, Button } from "reactstrap";
-import { infoContext, infoContextActions } from "../context/infoContext";
+import React, { useContext } from "react";
+import { Row, Col, Button } from "reactstrap";
+import { infoContext } from "../context/infoContext";
 
 const ProgressButtons = ({ previous, showSubmit }) => {
   const infoState = useContext(infoContext);

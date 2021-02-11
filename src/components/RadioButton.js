@@ -11,7 +11,7 @@ const RadioButton = ({ question, disable }) => {
   const change = (item, index) => {
     let newOption = { ...item };
     let newQuestion = { ...question };
-    newQuestion.Options.map((item, index) => {
+    newQuestion.Options.map((item) => {
       item.Answer = false;
     });
     newOption.Answer = true;
@@ -22,7 +22,6 @@ const RadioButton = ({ question, disable }) => {
     });
   };
 
-  console.log("question", question);
   return (
     <FormGroup tag="fieldset">
       <Label>{question.Label}</Label>

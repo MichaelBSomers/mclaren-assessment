@@ -1,8 +1,8 @@
-import React, { useState, useContext, useEffect } from "react";
-import { Button, Form, Row, Col, Container } from "reactstrap";
+import React, { useContext } from "react";
+import { Form, Row, Col, Container } from "reactstrap";
 import ProgressButtons from "../components/ProgressButtons";
 import QuestionContainer from "../components/QuestionContainer";
-import { infoContext, infoContextActions } from "../context/infoContext";
+import { infoContext } from "../context/infoContext";
 
 const ResponsivePage = ({ previous, onSubmit }) => {
   const infoState = useContext(infoContext);
@@ -34,7 +34,6 @@ const ResponsivePage = ({ previous, onSubmit }) => {
             infoState.state.data[currentPage].Sections[currentSection].SectionID
           }
         />
-        {/* TODO: Make Buttons their own component */}
         <ProgressButtons previous={previous} />
       </Form>
     </Container>

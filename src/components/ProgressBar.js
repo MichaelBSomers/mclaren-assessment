@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
 import { Row, Col } from "reactstrap";
 import { infoContext } from "../context/infoContext";
-// import "./styles.css";
 
-const ProgressBar = ({ progress }) => {
+const ProgressBar = () => {
   const infoState = useContext(infoContext);
   return (
     <Row>

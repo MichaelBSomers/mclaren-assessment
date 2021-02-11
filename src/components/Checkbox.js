@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { FormGroup, Input, Label } from "reactstrap";
 import { infoContext, infoContextActions } from "../context/infoContext";
 

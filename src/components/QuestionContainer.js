@@ -4,7 +4,6 @@ import Question from "./Question";
 import "../styles.css";
 
 const QuestionContainer = ({ questions = [] }) => {
-  console.log("questions", questions);
   return (
     <FormGroup
       required
