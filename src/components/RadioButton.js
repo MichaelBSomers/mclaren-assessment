@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FormGroup, Input, Label } from "reactstrap";
+import { infoContext, infoContextActions } from "../context/infoContext";
 
 const RadioButton = ({ question }) => {
+  const infoState = useContext(infoContext);
   if (!question.IsActive) {
     return null;
   }
+
+  const change = (item, index) => {
+    let newOption = { ...item };
+    let newQuestion = { ...question };
+    newQuestion.Options.map((item, index) => {
+      item.Answer = false;
+    });
+    newOption.Answer = true;
+    newQuestion.Options[index] = newOption;
+    infoState.dispatch({
+      type: infoContextActions.FORM_CHANGE,
+      value: newQuestion
+    });
+  };
+
   console.log("question", question);
   return (
     <FormGroup tag="fieldset">
@@ -18,6 +35,8 @@ const RadioButton = ({ question }) => {
                 type="radio"
                 name={question.QuestionID}
                 disabled={!item.IsActive}
+                onChange={() => change(item, index)}
+                defaultChecked={item.Answer}
               />
               {item.Description}
             </Label>
